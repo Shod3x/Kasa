@@ -1,0 +1,21 @@
+.footer {
+    background-color: black;
+    padding-top: 30px;
+    margin-top: 20px;
+    color: white;
+    margin-left: -12.5%;
+    margin-right: -12.5%;
+    padding-bottom: 30px;
+
+
+
+    p {
+        width: 130px;
+        text-align: center;
+    }
+
+    @media (max-width: 600px) {
+        margin-left: -5%;
+        margin-right: -5%;
+    }
+}

@@ -1,0 +1,162 @@
+@import "../../styles/variables";
+
+.aboutDiv {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.spaceBet {
+    display: flex;
+    justify-content: space-between;
+}
+
+.margRight {
+    margin-right: 10px;
+}
+
+.buttonAbout {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .buttonUni {
+        width: 100%;
+    }
+
+    .item {
+        background-color: $primary;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        margin-right: 10%;
+        margin-left: 10%;
+        border-radius: 5px;
+        border-style: none;
+        color: white;
+        padding: 0px 10px 0px 10px;
+        font-weight: 500;
+        height: 40px;
+
+
+    }
+
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+        color: black;
+        width: 70%;
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    .content.show {
+        height: auto;
+        transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+        max-height: 9999px;
+        padding-bottom: 10px;
+    }
+
+    .up {
+        transform: rotate(180deg);
+    }
+
+    img {
+        width: 30px;
+    }
+}
+
+.buttonAboutDetail {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+
+    .buttonUniDetail {
+        width: 100%;
+    }
+
+    .itemDetail {
+        background-color: $primary;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border-style: none;
+        color: white;
+        padding: 0px 10px 0px 10px;
+        font-weight: 500;
+        height: 40px;
+
+
+    }
+
+
+    .titleDetail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .contentDetail {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+        color: black;
+        width: 90%;
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    .contentDetail.show {
+        height: auto;
+        transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+        max-height: 9999px;
+        padding-bottom: 10px;
+    }
+}
+
+.aboutDivDetail {
+    margin-top: 20px;
+    display: flex;
+    gap: 60px;
+}
+
+@media (max-width: 767px) {
+    .buttonAbout {
+        .item {
+            margin-right: 0%;
+            margin-left: 0%;
+        }
+
+        .content {
+            width: 90%;
+        }
+    }
+
+    .buttonAboutDetail {
+
+        .itemDetail {
+            margin-right: 0%;
+            margin-left: 0%;
+        }
+    }
+
+    .aboutDivDetail {
+        flex-direction: column;
+        gap: 0px;
+    }
+}
