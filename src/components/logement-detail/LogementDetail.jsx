@@ -7,11 +7,12 @@ import "./LogementDetail.scss";
 import { getLogementById } from '../../logement.service';
 import "../collapse/Collapse.scss"
 import Carousel from '../carousel/Carousel';
+import DropdownMenu from '../collapse/Collapse'
 
 
 function LogementDetail() {
     const { id } = useParams();
-    const [logement, setLogement] = useState(null);
+    const [logement, setLogement] = useState(null); "r"
 
     useEffect(() => {
         const fetchLogement = async () => {
@@ -26,17 +27,19 @@ function LogementDetail() {
         fetchLogement();
     }, [id]);
 
-    const flecheUp = <img className='up' src="../fleche-vers-le-bas.png" alt="" />
-    const flecheDown = <img src="../fleche-vers-le-bas.png" alt="" />
-    const [selected, setSelected] = useState(null);
+    if (!logement) {
+        return <p>Loading...</p>;
+    }
 
-    const toggle = (i) => {
-        if (selected === i) {
-            setSelected(null);
-        } else {
-            setSelected(i);
-        }
-    };
+    const equipements = (
+        <div className='align'>
+            {logement.equipments.slice(1, 5).map((equipment, index) => (
+                <div key={index}>
+                    {equipment}
+                </div>
+            ))}
+        </div>
+    );
 
     return (
         <div>
@@ -74,7 +77,19 @@ function LogementDetail() {
                                 </div>
                             </div>
                         </div>
-                        <div id='collapseDetail' className='aboutDivDetail'>
+                        <div className="aboutDivDetail">
+                            <div className='buttonAboutDetail'>
+                                <div className='buttonUniDetail'>
+                                    <DropdownMenu title="Description" defaultContent={logement.description} />
+                                </div>
+                                <div className='buttonUniDetail'>
+                                    <DropdownMenu title="Equipments" defaultContent={equipements} />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {/* <div id='collapseDetail' className='aboutDivDetail'>
                             <div className='buttonAboutDetail'>
                                 <div className='buttonUniDetail'>
                                     <div className='titleDetail itemDetail' onClick={() => toggle(1)}>
@@ -105,7 +120,7 @@ function LogementDetail() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 ) : (
                     <p>Loading...</p>

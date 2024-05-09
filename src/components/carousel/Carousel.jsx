@@ -9,7 +9,7 @@ export default function Carousel({ logement }) {
     const flecheLeft = <img className='left' src="../fleche-vers-le-bas.png" alt="" />
 
     const handleNextImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % logement.pictures.length);
+        setCurrentImageIndex((nextIndex) => (nextIndex + 1) % logement.pictures.length);
     };
 
     const handlePrevImage = () => {
