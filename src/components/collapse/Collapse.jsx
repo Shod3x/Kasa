@@ -18,11 +18,13 @@ function DropdownMenu({ title, defaultContent }) {
             <div className='buttonUni'>
                 <div className='title item' onClick={toggle}>
                     <p>{title}</p>
-                    <span>{selected ? flecheUp : flecheDown}</span>
+                    <span className='up'>
+                        <img className={selected ? 'rotation' : 'invertRot'} src="../fleche-vers-le-bas.png" alt="" />
+                    </span>
                 </div>
                 <div className='center'>
                     <div className={selected ? 'content show' : 'content'}>
-                        {content}
+                        {defaultContent}
                     </div>
                 </div>
             </div>

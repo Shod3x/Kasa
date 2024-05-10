@@ -12,7 +12,7 @@ import DropdownMenu from '../collapse/Collapse'
 
 function LogementDetail() {
     const { id } = useParams();
-    const [logement, setLogement] = useState(null); "r"
+    const [logement, setLogement] = useState(null);
 
     useEffect(() => {
         const fetchLogement = async () => {

@@ -2,10 +2,9 @@ import React from 'react';
 import "../collapse/Collapse.scss"
 
 const StarRating = ({ rating }) => {
-    // Round the rating to the nearest integer
+
     const roundedRating = Math.round(rating);
 
-    // Generate an array of star elements
     const stars = [];
     for (let i = 0; i < 5; i++) {
         if (i < roundedRating) {
